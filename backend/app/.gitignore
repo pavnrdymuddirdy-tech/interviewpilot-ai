@@ -1,0 +1,19 @@
+# Secret API Keys
+.env
+.env.*
+!.env.example
+
+# Python Virtual Environment
+.venv/
+venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Node.js
+node_modules/
+dist/
+
+# VS Code
+.vscode/
