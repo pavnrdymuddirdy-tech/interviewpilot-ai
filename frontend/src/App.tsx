@@ -20,7 +20,7 @@ export default function App() {
     socket.current?.close();
     setAnswer('');
     setStatus('Connecting…');
-    const ws = new WebSocket('ws://127.0.0.1:8000/ws/interview');
+    const ws = new WebSocket('wss://interviewpilot-ai-backend-yrte.onrender.com/ws/interview');
     socket.current = ws;
     ws.onopen = () => { setStatus('AI responding…'); ws.send(JSON.stringify({ question: text, mode, consent })); };
     ws.onmessage = event => {
