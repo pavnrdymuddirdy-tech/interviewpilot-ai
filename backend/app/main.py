@@ -9,7 +9,8 @@ from openai import AsyncOpenAI
 load_dotenv(Path(__file__).resolve().parents[1] / '.env')
 app = FastAPI(title='InterviewPilot AI')
 app.add_middleware(CORSMiddleware, allow_origins=['http://localhost:5173'], allow_credentials=False, allow_methods=['*'], allow_headers=['*'])
-client = AsyncOpenAI(api_key=os.getenv('OPENAI_API_KEY', ''))
+api_key = os.getenv("OPENAI_API_KEY")
+client = AsyncOpenAI(api_key=api_key) if api_key else None
 
 @app.get('/health')
 def health():
